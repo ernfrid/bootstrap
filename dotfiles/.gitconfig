@@ -1,0 +1,12 @@
+[user]
+    email = delarson@wustl.edu
+    name = "Dave Larson"
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    ci = commit
+    co = checkout
+[core]
+    editor = /usr/bin/vim
