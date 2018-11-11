@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -xeo pipefail
 
 option="$1"
 
@@ -11,10 +11,10 @@ cp -r ${repo}/dotfiles/.[^.]* ~/
 if [[ ! -z ${option} ]]; then
     # Overwrite the dotfiles
     for s in $(ls ${repo}/dotfiles/.[^.]*-${option}); do
-        d=$(echo "$s" | sed "s/-${option}\$//")
+        d=$(basename $(echo "$s" | sed "s/-${option}\$//"))
         echo "$s"
         echo "$d"
-        cp -f "$s" "$d"
+        cp -f "$s" "~/$d"
     done
 fi
 vim +PluginInstall +qall
