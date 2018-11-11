@@ -14,7 +14,7 @@ if [[ ! -z ${option} ]]; then
         d=$(basename $(echo "$s" | sed "s/-${option}\$//"))
         echo "$s"
         echo "$d"
-        cp -f "$s" "~/$d"
+        cp -f "$s" ~/"$d"
     done
 fi
 vim +PluginInstall +qall
